@@ -3,12 +3,12 @@ const path = require(`path`);
 module.exports = {
   siteMetadata: {
     title: `Paperjam`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://mypaperjam.vercel.app`
   },
   plugins: [{
     resolve: 'gatsby-source-datocms',
     options: {
-      "apiToken": "GATSBY_DATO_CMS_API_TOKEN"
+      "apiToken": process.env.GATSBY_DATO_CMS_API_TOKEN
     }
   }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
@@ -28,7 +28,7 @@ module.exports = {
   {
     resolve: `gatsby-plugin-snipcart-advanced`,
     options: {
-      publicApiKey: "GATSBY_SNIPCART_APIKEY",
+      publicApiKey: process.env.GATSBY_SNIPCART_APIKEY,
       currency: 'eur',
       openCartOnAdd: false,
       useSideCart: true,
